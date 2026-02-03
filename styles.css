@@ -1,0 +1,244 @@
+/*
+* styles.css
+* Este arquivo CSS define os estilos visuais para a página,
+* incluindo layout, tipografia, cores e responsividade.
+*/
+
+/* --- Reset Básico --- */
+/* Aplica um reset de CSS para garantir que todos os navegadores
+   comecem com uma base consistente, removendo margens e preenchimentos
+   padrão e definindo o box-sizing para border-box. */
+* {
+    margin: 0; /* Remove a margem externa padrão de todos os elementos */
+    padding: 0; /* Remove o preenchimento interno padrão de todos os elementos */
+    box-sizing: border-box; /* Garante que o padding e a borda sejam incluídos na largura/altura total do elemento */
+}
+
+/* --- Estilos Globais --- */
+/* Define estilos para o corpo da página (body), como fonte, cor do texto,
+   altura da linha e cor de fundo. */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Define a família da fonte principal */
+    color: #333333; /* Cor principal do texto */
+    line-height: 1.6; /* Altura da linha para melhor legibilidade */
+    background-color: #f8f9fa; /* Cor de fundo suave para a página */
+}
+
+/* --- Cabeçalho (Header) --- */
+/* Estiliza o cabeçalho da página, incluindo fundo gradiente, cor do texto,
+   alinhamento e preenchimento. */
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Fundo com gradiente de cores */
+    color: white; /* Cor do texto no cabeçalho */
+    text-align: center; /* Alinha o texto ao centro */
+    padding: 60px 20px 40px; /* Preenchimento interno (top, right, bottom, left) */
+}
+
+/* Título principal no cabeçalho */
+header h1 {
+    font-size: 48px; /* Tamanho da fonte do título */
+    font-weight: bold; /* Peso da fonte (negrito) */
+    margin-bottom: 12px; /* Margem inferior */
+    text-transform: uppercase; /* Transforma o texto em maiúsculas */
+    letter-spacing: 2px; /* Espaçamento entre as letras */
+}
+
+/* Subtítulo ou "manchete" no cabeçalho */
+.headline {
+    font-size: 16px; /* Tamanho da fonte */
+    line-height: 22px; /* Altura da linha */
+    font-weight: bold; /* Peso da fonte */
+    color: #ffd700; /* Cor amarela para destaque */
+    text-transform: uppercase; /* Transforma o texto em maiúsculas */
+    letter-spacing: 1px; /* Espaçamento entre as letras */
+}
+
+/* --- Seção de Introdução (Intro) --- */
+/* Estiliza a seção de introdução da página, definindo largura máxima,
+   centralização e preenchimento. */
+.intro {
+    max-width: 900px; /* Largura máxima para o conteúdo */
+    margin: 0 auto; /* Centraliza o bloco na página */
+    padding: 60px 20px; /* Preenchimento interno */
+}
+
+/* Título da seção de introdução */
+.intro h2 {
+    font-size: 32px; /* Tamanho da fonte */
+    color: #667eea; /* Cor do título */
+    margin-bottom: 20px; /* Margem inferior */
+    text-align: center; /* Alinha o texto ao centro */
+}
+
+/* Parágrafo principal na seção de introdução */
+.intro > p {
+    font-size: 18px; /* Tamanho da fonte */
+    line-height: 28px; /* Altura da linha */
+    text-align: justify; /* Alinha o texto de forma justificada */
+    margin-bottom: 40px; /* Margem inferior */
+    color: #555555; /* Cor do texto */
+}
+
+/* Imagem na seção de introdução */
+.intro img {
+    width: 100%; /* A imagem ocupa 100% da largura do contêiner */
+    border-radius: 28px; /* Borda arredondada para a imagem */
+    margin-bottom: 16px; /* Margem inferior */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+    height: 500px; /* Altura fixa da imagem */
+}
+
+/* Subtítulo da imagem na seção de introdução */
+.subtitle {
+    font-size: 16px; /* Tamanho da fonte */
+    line-height: 22px; /* Altura da linha */
+    font-style: italic; /* Texto em itálico */
+    text-align: center; /* Alinha o texto ao centro */
+    color: #666666; /* Cor do texto */
+    margin-top: 8px; /* Margem superior */
+}
+
+/* --- Divisor (Divider) --- */
+/* Estiliza uma linha divisória para separar seções. */
+.divider {
+    width: 80%; /* Largura da linha */
+    height: 2px; /* Espessura da linha */
+    margin: 60px auto; /* Margem superior/inferior e centralização */
+    background: linear-gradient(to right, transparent, #d9d9d9, transparent); /* Gradiente para efeito de "desaparecimento" */
+}
+
+/* --- Seção de Atrações (Attractions) --- */
+/* Estiliza a seção que lista as atrações. */
+.attractions {
+    max-width: 1200px; /* Largura máxima para o conteúdo */
+    margin: 0 auto; /* Centraliza o bloco */
+    padding: 40px 20px 80px; /* Preenchimento interno */
+}
+
+/* Título da seção de atrações */
+.attractions h2 {
+    font-size: 32px; /* Tamanho da fonte */
+    color: #667eea; /* Cor do título */
+    margin-bottom: 24px; /* Margem inferior */
+    text-align: center; /* Alinha o texto ao centro */
+}
+
+/* Parágrafo introdutório da seção de atrações */
+.attractions > p {
+    font-size: 18px; /* Tamanho da fonte */
+    line-height: 28px; /* Altura da linha */
+    text-align: center; /* Alinha o texto ao centro */
+    margin-bottom: 60px; /* Margem inferior */
+    color: #555555; /* Cor do texto */
+    max-width: 800px; /* Largura máxima do parágrafo */
+    margin-left: auto; /* Centraliza o parágrafo */
+    margin-right: auto; /* Centraliza o parágrafo */
+}
+
+/* --- Lista de Atrações (Attraction List) --- */
+/* Contêiner que organiza os itens das atrações usando Grid Layout. */
+.attraction-list {
+    display: grid; /* Ativa o Grid Layout */
+    grid-template-columns: 1fr; /* Uma coluna por padrão (para telas pequenas) */
+    gap: 50px; /* Espaçamento entre os itens do grid */
+}
+
+/* Cada item individual de atração */
+.attraction-item {
+    background: white; /* Cor de fundo do item */
+    border-radius: 20px; /* Borda arredondada */
+    padding: 30px; /* Preenchimento interno */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave para hover */
+}
+
+/* Efeito ao passar o mouse sobre o item de atração */
+.attraction-item:hover {
+    transform: translateY(-5px); /* Move o item ligeiramente para cima */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Aumenta a sombra */
+}
+
+/* Imagem dentro do item de atração */
+.attraction-item img {
+    width: 100%; /* A imagem ocupa 100% da largura do contêiner */
+    height: 375px; /* Altura fixa da imagem */
+    border-radius: 16px; /* Borda arredondada */
+    margin-bottom: 24px; /* Margem inferior */
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+}
+
+/* Título de cada atração */
+.attraction-item h3 {
+    font-size: 26px; /* Tamanho da fonte */
+    color: #764ba2; /* Cor do título */
+    margin-bottom: 16px; /* Margem inferior */
+    font-weight: bold; /* Peso da fonte (negrito) */
+}
+
+/* Parágrafo descritivo dentro do item de atração */
+.attraction-item p {
+    font-size: 16px; /* Tamanho da fonte */
+    line-height: 26px; /* Altura da linha */
+    color: #555555; /* Cor do texto */
+    margin-bottom: 20px; /* Margem inferior */
+    text-align: justify; /* Alinha o texto de forma justificada */
+}
+
+/* Lista não ordenada dentro do item de atração */
+.attraction-item ul {
+    list-style-position: inside; /* Posição do marcador da lista (dentro do texto) */
+    padding-left: 10px; /* Preenchimento à esquerda */
+}
+
+/* Cada item da lista dentro de uma atração */
+.attraction-item ul li {
+    font-size: 15px; /* Tamanho da fonte */
+    line-height: 28px; /* Altura da linha */
+    color: #666666; /* Cor do texto */
+    padding-left: 8px; /* Preenchimento à esquerda */
+}
+
+/* Estiliza o marcador de cada item da lista */
+.attraction-item ul li::marker {
+    color: #667eea; /* Cor do marcador */
+}
+
+/* --- Rodapé (Footer) --- */
+/* Estiliza o rodapé da página. */
+footer {
+    background-color: #2d3748; /* Cor de fundo escura */
+    color: white; /* Cor do texto no rodapé */
+    text-align: center; /* Alinha o texto ao centro */
+    padding: 30px 20px; /* Preenchimento interno */
+    margin-top: 40px; /* Margem superior para separar do conteúdo */
+}
+
+/* Parágrafo no rodapé */
+footer p {
+    font-size: 14px; /* Tamanho da fonte */
+    letter-spacing: 0.5px; /* Espaçamento entre as letras */
+}
+
+/* --- Responsividade (Media Queries) --- */
+/* Define estilos que se aplicam apenas a telas com largura mínima de 768px (tablets). */
+@media (min-width: 768px) {
+    .attraction-list {
+        grid-template-columns: repeat(2, 1fr); /* Altera para 2 colunas no grid */
+    }
+}
+
+/* Define estilos que se aplicam apenas a telas com largura mínima de 1024px (desktops). */
+@media (min-width: 1024px) {
+    .attraction-list {
+        grid-template-columns: repeat(3, 1fr); /* Altera para 3 colunas no grid */
+    }
+    
+    .attraction-item p {
+        text-align: left; /* Alinha o texto do parágrafo do item de atração à esquerda */
+    }
+    
+    .intro > p {
+        text-align: center; /* Alinha o parágrafo da introdução ao centro */
+    }
+}
